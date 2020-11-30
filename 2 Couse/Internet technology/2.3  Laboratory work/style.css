@@ -1,0 +1,31 @@
+body {
+	text-align: center;
+	margin: 0%;
+	padding: 0%;
+	background:#ebedee;
+}
+
+header {
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 10px;
+	margin-bottom: 10px;	
+	padding: 10px;
+	border-radius: 0.5em;
+	background: #f5f7fa;
+}
+main {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 0%;
+	margin-bottom: 2%;
+	padding: 1%;
+	background: red;
+	border-radius: 0.5em;
+	background: #fdfbfb;
+}
+
+input {
+	margin-top: 40px;
+	border-radius: 0.1em;
+}

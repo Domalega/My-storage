@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>2.2 Лабораторная работа</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+    var started = false;
+    delay = 100;
+    imageNum = 1;
+    Images = new Array();
+    for (i = 1; i <= 12; i++) {
+        Images[i] = new Image();
+        Images[i].src = "assets/s" + i + ".gif";
+    }
+
+    function animate() {
+        document.animation.src = Images[imageNum].src;
+        imageNum++;
+        if (imageNum > 12)
+            imageNum = 1;
+    }
+	
+    function start() {
+        if (!started) {
+            started = true;
+            animate();
+        }
+    }
+    function stop() {
+        started = false;
+    }
+
+    function faster() {
+        delay -= 20;
+        if (delay < 0) 
+			delay = 0;
+    }
+
+    function slower() {
+        delay += 20;
+        if (delay > 1000) 
+			delay = 1000;
+    }
+
+    function def() {
+        delay = 100;
+    }
+</script>
+</head>
+<body>
+	<main>
+		<section class = "picture">
+			<p><img name="animation" src="assets/s1.gif" alt="[Анимация]" class="brd" class="sz" onLoad="if (started) setTimeout('animate()', delay);"></p>
+		</section>
+		<section class = "allButtons">
+			<input type="button" value="Старт" onclick="start()" class="button">
+			<input type="button" value="Стоп" onclick="stop()" class="button">
+			<input type="button" value="Cбросить скорость" onclick="def()" class="button">
+			<input type="button" value="Медленнее" onclick="slower()" class="button">
+			<input type="button" value="Быстрее" onclick="faster()" class="button">
+		</section>			
+	</main>
+</body>
+</html>

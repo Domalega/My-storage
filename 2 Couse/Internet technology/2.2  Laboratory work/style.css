@@ -1,0 +1,41 @@
+body {
+	margin: 0;
+	padding: 0;	
+}
+
+main {
+	text-align: center;
+	margin: 20%;
+	padding: 50px;
+	font-size: 150%;
+	background-color: #ffffff;
+	border: 5px solid #ebb875;
+	border-radius: 10px 150px 10px 150px;
+    box-shadow: 10px -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.picture {
+	margin-bottom: 10px;
+}
+
+.button {
+
+	color: black;
+	padding: 1em 2em;
+	margin: 5px;	
+	outline: none;
+	border: 2px solid #ebb875;
+	border-radius: 80px 100px 80px 100px;
+	background: white ;
+} 
+
+.button:hover { 
+	box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.button:focus{
+	background: white;
+	color: white;
+	border: 2px solid white;
+	box-shadow: 5px -5px 5px rgba(0, 0, 0, 0);
+}

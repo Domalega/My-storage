@@ -1,0 +1,33 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: #0a2201;
+}
+
+header {
+	color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 50px;
+	margin: 10% 10% 0 10%;
+	background: linear-gradient(90deg, #237a57 20%, #093028 80%);
+}
+
+main {
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 100px;
+	margin: 20px 10% 10% 10%;
+	background: linear-gradient(90deg, #093028 0%, #237a57 100%);
+}
+
+table {
+	display: inline-block;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+}

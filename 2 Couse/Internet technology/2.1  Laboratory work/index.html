@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2.1</title>
+		<link rel="stylesheet" href="style.css">
+		<script language="JavaScript">
+			var clicks = 0;
+			function Change() {
+				clicks += 1;
+				if(clicks <= 3){
+					var d = document;
+					var cd = d.Avocado.src;
+					d.Avocado.src = d.Peach.src;
+					d.Peach.src = cd;
+				}
+			}
+			</script>
+	</head>
+        
+	<body>
+		<div class = "content">	
+			<img name="Avocado" src="http://pngimg.com/uploads/avocado/avocado_PNG15506.png">
+			<input type="button" value="Обменять" onClick="Change()" class="button">
+			<img name="Peach" src="http://pngimg.com/uploads/apricot/apricot_PNG12652.png">
+		</div>
+	</body>
+</html>

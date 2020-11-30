@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>3.1 Лабораторная работа</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+	<header>
+		<h3>Бригада №3<h3>
+				<p>Домалега Владимир<br>Майненгер Герман<br>Врабий Артем</p>
+	</header>
+    <main>
+        <div class="dropdown">
+            <div class="dropButton" onmouseover="Menu(1)">Поменять цвет фона</div>
+            <div id="myDropdown" class="menuItem">
+                <div class="op" onclick="backgroundcolor(1), stop()">1ый градиент</div>
+                <div class="op" onclick="backgroundcolor(2)">2ой градиент</div>
+                <div class="op" onclick="backgroundcolor(3)">3ий градиент</div>
+                <div class="op" onclick="backgroundcolor(4)">4ый градиент</div>
+            </div>
+        </div>
+        </div>
+        <div class="dropdown">
+        <div class="dropButton" onmouseover="Menu(3)">Изменить шрифт</div>
+        <div id="myDropdown2" class="menuItem">
+            <div onclick="fontSize(1)">1ый шрфит</div>
+            <div onclick="fontSize(2)">2ой шрифт</div>
+            <div onclick="fontSize(3)">Сброс</div>
+        </div>
+    </div>
+        <div class="dropdown">
+        <div class="dropButton" onmouseover="Menu(2)">Поменять цвет букв</div>
+        <div id="myDropdown1" class="menuItem">
+            <div onclick="colorText(1)">1ый цвет</div>
+            <div onclick="colorText(2)">2ый цвет</div>
+            <div onclick="colorText(3)">3ый цвет</div>
+        </div>
+    </div>
+
+    </main>
+    <div class="additionalTask">Нажмите дважды на кнопку "1ый градиент"</div>
+</body>
+
+</html>
