@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<students>
+    <student>
+        <faculty>ИВТ</faculty>
+        <course>3</course>
+        <group>П-42</group>
+        <name>Шаньгин Евгений</name>
+        <scores>
+            <subject>
+                <name>Метрология, Стандратизация и Сертификация</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Объектно Ориентированное Программирование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Архитектура Вычислительных Систем</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Теория Массового Обслуживания</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Экономика</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Базы Данных</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Физическая культура</name>
+                <score>2</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>ИВТ</faculty>
+        <course>3</course>
+        <group>П-42</group>
+        <name>Федосеев Станислав</name>
+        <scores>
+            <subject>
+                <name>Метрология, Стандратизация и Сертификация</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Объектно Ориентированное Программирование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Архитектура Вычислительных Систем</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Теория Массового Обслуживания</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Экономика</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Базы Данных</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Физическая культура</name>
+                <score>1</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>ИВТ</faculty>
+        <course>3</course>
+        <group>П-42</group>
+        <name>Копылов Евдоким</name>
+        <scores>
+            <subject>
+                <name>Метрология, Стандратизация и Сертификация</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Объектно Ориентированное Программирование</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Архитектура Вычислительных Систем</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Теория Массового Обслуживания</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Экономика</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Базы Данных</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Физическая культура</name>
+                <score>2</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>Факультет №1</faculty>
+        <course>4</course>
+        <group>Группа №1</group>
+        <name>Студент №1</name>
+        <scores>
+            <subject>
+                <name>Предмет №1</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №2</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №3</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №4</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №5</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №6</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Предмет №7</name>
+                <score>1</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>Факультет №1</faculty>
+        <course>4</course>
+        <group>Группа №1</group>
+        <name>Студент №2</name>
+        <scores>
+            <subject>
+                <name>Предмет №1</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №2</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №3</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №4</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №5</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №6</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Предмет №7</name>
+                <score>2</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>Факультет №1</faculty>
+        <course>4</course>
+        <group>Группа №1</group>
+        <name>Студент №3</name>
+        <scores>
+            <subject>
+                <name>Предмет №1</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №2</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №3</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №4</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №5</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №6</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Предмет №7</name>
+                <score>0</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>Факультет живописи</faculty>
+        <course>1</course>
+        <group>Х-09</group>
+        <name>Рожкова Дарья</name>
+        <scores>
+            <subject>
+                <name>Рисование</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Черчение</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>История</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Еще одно рисование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Еще какое то рисование</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Теория исскуств</name>
+                <score>2</score>
+            </subject>
+        </scores>
+
+    </student>
+
+    <student>
+        <faculty>Факультет живописи</faculty>
+        <course>1</course>
+        <group>Х-09</group>
+        <name>Колобова Лариса</name>
+        <scores>
+            <subject>
+                <name>Рисование</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Черчение</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>История</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Еще одно рисование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Еще какое то рисование</name>
+                <score>2</score>
+            </subject>
+            <subject>
+                <name>Теория исскуств</name>
+                <score>0</score>
+            </subject>
+        </scores>
+    </student>
+
+    <student>
+        <faculty>Факультет живописи</faculty>
+        <course>1</course>
+        <group>Х-09</group>
+        <name>Романова Алика</name>
+        <scores>
+            <subject>
+                <name>Рисование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Черчение</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>История</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Еще одно рисование</name>
+                <score>1</score>
+            </subject>
+            <subject>
+                <name>Еще какое то рисование</name>
+                <score>0</score>
+            </subject>
+            <subject>
+                <name>Теория исскуств</name>
+                <score>2</score>
+            </subject>
+        </scores>
+    </student>
+
+</students>

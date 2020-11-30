@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>3.2 Лабораторная работа</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+	<script src="script.js"></script>
+</head>
+
+<body onload="main()">
+    <header>
+        <h2>Бригада №3</h2>
+        <p>Домалега Владимир<br>Майненгер Герман<br>Врабий Артем</p>
+    </header>
+    <main>
+        <div id="reg">
+            <p>Здравствуйте, <span id="name"></span>.</p>
+            <p>Вы посетили эту страницу <span id="count" ></span> раз(а)<br>Дата последнего посещения: <span id="time"></span></p>
+            <input type="button" value="Обнулить посещения" id="exit">
+        </div>
+
+        <div id="unreg">
+            <h2>Авторизация</h2>
+            <input type="text" placeholder="Введите имя" id="input">
+            <br>
+            <input type="button" value="Зарегистрироваться" id="register" onclick="main()">
+        </div>
+        <br>
+        <div class="count">Порог посещений = 2</div>
+    </main>
+ 
+</body>
+
+</html>
