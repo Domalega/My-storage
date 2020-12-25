@@ -27,20 +27,20 @@ struct Queue {
 	struct Queue* next;
 };
 
-typedef struct DBD{
+typedef struct Vertex{
 	record1 Data;
 	int bal;
-	struct DBD *Left;
-	struct DBD *Right;
-	struct DBD *next;
-} DBD;
+	struct Vertex *Left;
+	struct Vertex *Right;
+	struct Vertex *next;
+} Vertex;
 
-struct coding {
-    char symbol;
-    unsigned int quantity; 
-    float probability; 
-    unsigned short int lengthCW; 
-    char* codeword; 
+struct Coding {
+    char symbol; // Код символа
+    int frequency; // Количество поялвений
+    float probability; // Вероятность появления
+    short int length; // Длинна код. слова
+    char* codeword; // Кодовое слово
 };
 
 void ReadBase(record1 *&DataBase) {
@@ -133,12 +133,12 @@ void Read_all_lines(record1 *DataBase, record1 *arrayOfPtr) {
 	system("pause");			
 }
 
-void Bsearch(record1* DataBase, Queue* head) {
+void Bsearch(record1* DataBase, Queue* head, bool flag) {
 	Queue* ptr= head;
 	Queue* last = new Queue;
 	char key[3] = {0}, k[3] = {0};
 	int mid, left = 0, right = 4000, compare;
-	cout << "Input key\n";
+	cout << "Input key: ";
 	cin >> key[0] >> key[1];
 	while (left < right) {
 		mid = (left + right) / 2;
@@ -174,7 +174,7 @@ void Bsearch(record1* DataBase, Queue* head) {
 	}
 	else 
 		head = NULL;	
-	if(head != NULL){
+	if(head != NULL && flag == 1){
 		int i = 1;
 		for (ptr= head; ptr->next != NULL; ptr = ptr->next) {
 			cout << i << ")\t" << ptr->record1_Q.FIO;
@@ -185,16 +185,17 @@ void Bsearch(record1* DataBase, Queue* head) {
 		}
 		system("pause");
 	}
+	if(flag == 0) {}
 	else {
 		cout << "not found" << endl;
 		system("pause");
 	}
 }
 
-void B2Insert(DBD **p, record1 DataBase){
-	DBD *q;
+void B2Insert(Vertex **p, record1 DataBase){
+	Vertex *q;
 	if((*p) == NULL) {
-		(*p) = new DBD;
+		(*p) = new Vertex;
 		(*p)->Data = DataBase;
 		(*p)->Left = (*p)->Right = (*p)->next = NULL;
 		(*p)->bal = 0;
@@ -240,28 +241,28 @@ void B2Insert(DBD **p, record1 DataBase){
 				} else HR = 0;
 			}
 		}else if((*p)->Data.DepartmentNumber == DataBase.DepartmentNumber){
-				DBD *q = (*p);
+				Vertex *q = (*p);
 				for(;q->next != NULL; q = q->next){};
-				q->next = new DBD;
+				q->next = new Vertex;
 				q->next->Data = DataBase;
 				q->next->Left = q->next->Right = q->next->next = NULL;
 		}
 	} 
 }
 
-void obhod2(DBD *p){
-	DBD *q;
+void BypassTree(Vertex *p){
+	Vertex *q;
 	if(p != NULL){
-		obhod2(p->Left);
+		BypassTree(p->Left);
 		cout << "\t" << p->Data.FIO;
 		cout << "\t" << p->Data.DepartmentNumber;
 		cout << "\t" << p->Data.Post;
 		cout << "\t" << p->Data.data << "\n";
-		obhod2(p->Right);
+		BypassTree(p->Right);
 	}
 }
 
-void quickSortCoding(coding* A, int R, int L) {
+void QuickSort(Coding* A, int R, int L) {
     while (L < R) {
         float x = A[L].probability;
         int i = L;
@@ -271,17 +272,16 @@ void quickSortCoding(coding* A, int R, int L) {
                 i++;
             while (A[j].probability < x)
                 j--;
-
             if (i <= j) {
                 char tmp_ch;
                 tmp_ch = A[i].symbol;
                 A[i].symbol = A[j].symbol;
                 A[j].symbol = tmp_ch;
 
-                unsigned int tmp_q;
-                tmp_q = A[i].quantity;
-                A[i].quantity = A[j].quantity;
-                A[j].quantity = tmp_q;
+                int tmp_q;
+                tmp_q = A[i].frequency;
+                A[i].frequency = A[j].frequency;
+                A[j].frequency = tmp_q;
 
                 float tmp_prop;
                 tmp_prop = A[i].probability;
@@ -293,19 +293,17 @@ void quickSortCoding(coding* A, int R, int L) {
         }
 
         if (j - L > R - i) {
-            quickSortCoding(A, R, i);
+            QuickSort(A, R, i);
             R = j;
         }
         else {
-            quickSortCoding(A, j, L);
+            QuickSort(A, j, L);
             L = i;
         }
     }
 }
 
-
-
-int Up(int n, float q, coding*& code){
+int Up(int n, float q, Coding *&code){
 	int j = n - 2;
 	for(int i = n - 2; i >= 1; i--) {
 		if(code[i-1].probability<q) {
@@ -322,37 +320,38 @@ int Up(int n, float q, coding*& code){
 	return j;
 }
 
-void Down(int n, int j, coding*& code){
+void Down(int n, int j, Coding *&code){
 	char* S = new char[n + 2];
-	int l=code[j].lengthCW;
+	int l = code[j].length;
 	for(int i = 0; i <= n - 1; i++) 
 		S[i] = code[j].codeword[i];
 	for(int i = j; i <= n - 2; i++) {
-		for(int t = 0; t <= n - 1; t++) {
+		for(int t = 0; t <= n - 1; t++) 
 			code[i].codeword[t] = code[i+1].codeword[t];
-		}
-		code[i].lengthCW = code[i + 1].lengthCW;
+		code[i].length = code[i + 1].length;
 	}
+	
 	for(int i = 0; i < n; i++) 
-		code[n-2].codeword[i]  = S[i];
+		code[n - 2].codeword[i] = S[i];
 	for(int i = 0; i < n; i++) 
 		code[n - 1].codeword[i] = S[i];
-	code[n - 2].codeword[l-1] = '0';
-	code[n - 1].codeword[l-1] = '1';
+		
+	code[n - 2].codeword[l - 1] = '0';
+	code[n - 1].codeword[l - 1] = '1';
 	code[n - 2].codeword[l] = '\0';
     code[n - 1].codeword[l] = '\0';
-	code[n - 2].lengthCW = l + 1;
-	code[n - 1].lengthCW = l + 1;
+	code[n - 2].length = l + 1;
+	code[n - 1].length = l + 1;
 }
 
-void Huffman(coding*& code, int n, float *P, int nV){
+void Huffman(Coding*& code, int n, float *P, int nV){
 	if(n == 1){
             code[0].codeword[0] = '0';
             code[1].codeword[0] = '1';
 			code[0].codeword[1] = '\0';
             code[1].codeword[1] = '\0';
-            code[0].lengthCW = code[0].lengthCW + 1;
-            code[1].lengthCW = code[1].lengthCW + 1;
+            code[0].length = code[0].length + 1;
+            code[1].length = code[1].length + 1;
 	}
 	else{
 		float q = code[n - 1].probability + code[n - 2].probability;
@@ -362,14 +361,14 @@ void Huffman(coding*& code, int n, float *P, int nV){
 		if(n == nV){
 			for(int i = 0; i < n; i++){
 				code[i].probability = P[i];
-				code[i].lengthCW--;
+				code[i].length--;
 			}
 		}
 	}
 }
 
-void tabSym(coding*& code, int& numsUnique) {
-    int nSym[256] = { 0 };
+void tabSym(Coding*& code, int& numSymbols) {
+    int nSym[256] = {0};
     int totalNums = 0;
     char ch;
     fstream file("testBase2.dat", ios::in | ios::binary);
@@ -383,56 +382,55 @@ void tabSym(coding*& code, int& numsUnique) {
     file.close();
     for (int i = 0; i < 256; i++)
         if (nSym[i] != 0)
-            numsUnique++;
-    code = new coding[numsUnique];
-    unsigned short int temp = 0;
-    float * P = new float[256];
+            numSymbols++;
+    code = new Coding[numSymbols];
+    int temp = 0;
+    float *P = new float[256];
     for (int i = 0; i < 256; i++) {
         if (nSym[i] != 0) {
             code[temp].symbol = char(i);
-            code[temp].quantity = nSym[i];
+            code[temp].frequency = nSym[i];
             code[temp].probability = (float)nSym[i] / (float)totalNums;
             temp++;
         }
     }
-    quickSortCoding(code, numsUnique - 1, 0);
-    for (int i = 0; i <= numsUnique - 1; i++) {
-    	P[i]=(float)code[i].quantity / (float)totalNums;
-    	code[i].codeword = new char[255];
-    	code[i].lengthCW = 0;
+    QuickSort(code, numSymbols - 1, 0);
+    for (int i = 0; i <= numSymbols - 1; i++) {
+    	P[i] = (float)code[i].frequency / (float)totalNums;
+    	code[i].codeword = new char[256];
+    	code[i].length = 0;
 	}
-    Huffman(code, numsUnique, P, numsUnique);
+    Huffman(code, numSymbols, P, numSymbols);
 }
 
-void printTab(coding* code, int numSymbols) {
+void printTab(Coding* code, int numSymbols) {
     system("CLS");
-    cout  << "code symbol           count                 probability                      length                            code          "  << "\n";
-    float entropy = 0;
-    float Lm = 0;
+    cout  << "Code symbol          Frequency               Probability                    Length                           Code          "  << "\n";
+    float H = 0, L_avarange = 0;
     for (int i = 0; i < numSymbols; i++) {
-        entropy += code[i].probability * log2(code[i].probability);
-        Lm += (float)code[i].lengthCW * code[i].probability;
-            cout<< std::setw(7) << (int)(unsigned char)code[i].symbol << std::setw(4) << "" << "|"
-            << setw(15) << code[i].quantity << "   |"
+        H += code[i].probability * log2(code[i].probability);
+        L_avarange += (float)code[i].length * code[i].probability;
+        cout << i << " \\"<< setw(7) << (int)(unsigned char)code[i].symbol << setw(4) << "|"
+            << setw(15) << code[i].frequency << "   |"
             << setw(23) << fixed << code[i].probability<< "   |"
-            << setw(23) << code[i].lengthCW << "   |"
+            << setw(23) << code[i].length << "   |"
             << setw(29) << code[i].codeword << "   \n";
     }
-
-    cout <<endl<<endl<< "  entropy: " << -entropy << "\n";
-    cout << "  average length: " << Lm << "\n";
-
+    cout << "\n\n" << "H(entropy): " << -H << "\n";
+    cout << "Length (average) : " << L_avarange << "\n";
 }
 
 int main() {
-	int userInput = 0, count = 0;
+	bool flag;
+	int userInput = 0, count = 0, numSymbols = 0;
 	char key;
-	DBD *Root = NULL;
+    struct Coding *codeH = NULL;
+	struct Vertex *Root = NULL;
 	struct Queue *p;
-	struct Queue* head = new Queue;
+	struct Queue *head = new Queue;
 	struct record1 *arrayOfPtr = new record1;
 	struct record1 *DataBase = new record1[N];
-	while (userInput <= 9) {
+	while (userInput < 9) {
 		system("CLS");
 		cout << "1) Print 20 first lines\n";
 		cout << "2) Print all lines\n";
@@ -440,7 +438,7 @@ int main() {
 		cout << "4) Sort Base and print all lines(HeapSort)\n";
 		cout << "5) Bsearch\n";		
 		cout << "6) B Tree\n";
-		cout << "7) Huffman`s coding\n";
+		cout << "7) Huffman`s Coding\n";
 		cout << "8) Exit\n";
 		cin >> userInput;
 		system("CLS");
@@ -472,32 +470,32 @@ int main() {
 			break; 
 
 		case 5:
+			flag = 1;
 			ReadBase(arrayOfPtr);
 			Create_Index_Massive(DataBase, arrayOfPtr);
 			HeapSort(DataBase);
-			Bsearch(DataBase, head);
+			Bsearch(DataBase, head, flag);
 			break;			
 
 		case 6:
+			flag = 0;
 			ReadBase(arrayOfPtr);
 			Create_Index_Massive(DataBase, arrayOfPtr);
+			HeapSort(DataBase);
+			Bsearch(DataBase, head, flag);
 			for(p = head; p->next != NULL; p = p->next)
 				B2Insert(&Root, p->record1_Q);
-			obhod2(Root);
+			BypassTree(Root);
 			system("pause");
 			break;
 
 		case 7: {
 			ReadBase(arrayOfPtr);
 			Create_Index_Massive(DataBase, arrayOfPtr);	
-			int  numSymbols = 0;
-    		coding* codeH = NULL;
     		tabSym(codeH, numSymbols);
     		printTab(codeH, numSymbols);
 			system("pause");	
-			break;
-			
-		}
+			break; }
 				
 		case 8:
 			exit(0);
