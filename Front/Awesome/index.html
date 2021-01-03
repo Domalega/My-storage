@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>My skills</title>
+</head>
+
+<body>
+    <div class="flex-container-1-part">
+        <div class="calculator">
+            <input type="text" id="display-calc" class="display-calc" readonly> <br>
+            <input type="button" value="del" class="action-calc"
+                onclick="document.getElementById('display-calc').value =''">
+            <input type="button" value="+" class="action-calc"
+                onclick="document.getElementById('display-calc').value +=' + '/*, Checksign()*/">
+            <input type="button" value="-" class="action-calc"
+                onclick="document.getElementById('display-calc').value +=' - '/*, Checksign()*/">
+            <input type="button" value="*" class="action-calc"
+                onclick="document.getElementById('display-calc').value +=' * '/*, Checksign()*/">
+            <input type="button" value="/" class="action-calc"
+                onclick="document.getElementById('display-calc').value +=' / '/*, Checksign()*/"><br>
+            <input type="button" value="1" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=1">
+            <input type="button" value="2" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=2">
+            <input type="button" value="3" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=3"><br>
+            <input type="button" value="4" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=4">
+            <input type="button" value="5" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=5">
+            <input type="button" value="6" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=6"><br>
+            <input type="button" value="7" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=7">
+            <input type="button" value="8" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=8">
+            <input type="button" value="9" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=9"><br>
+            <input type="button" value="0" class="number-calc"
+                onclick="document.getElementById('display-calc').value +=0">
+            <input type="button" value="." class="number-calc"
+                onclick="document.getElementById('display-calc').value +='.'">
+            <input type="button" value="=" class="number-calc" onclick="Calculate()">
+        </div>
+        <div class="block1">
+        </div>
+        <div class="block2"></div>
+    </div>
+    <div class="flex-container-2-part">
+        <div class="todo">
+
+            <input type="text" class="input-todo">
+
+            <button class="btn-todo">add</button>
+
+            <ul class="result-todo"> </ul>
+
+            <div>
+                <p>Total:</p>
+                <span class="total-todo"></span>
+            </div>
+
+        </div>
+        <div class="block4"></div>
+</body>
+
+</html>

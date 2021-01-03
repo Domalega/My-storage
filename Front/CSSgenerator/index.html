@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="block"></div>
+        <p> Задайте ширину и высоту фигуры
+            <input type="textbox" placeholder="Высоту сюда" id="h" onchange="fun2()">
+            <input type="textbox" placeholder="Ширину сюда" id="w" onchange="fun2()">
+        </p>
+        <p> Вверхний левый угол
+            <input type="range" id="rtl" min="0" max="100" value="0" oninput="fun1()">
+            <input type="text" id="ttl" value="0">
+        </p>
+        <p> Вверхний правый угол
+            <input type="range" id="rtr" min="0" max="100" value="0" oninput="fun1()">
+            <input type="text" id="ttr" value="0">
+        </p>
+        <p> Нижний правый угол
+            <input type="range" id="rbr" min="0" max="100" value="0" oninput="fun1()">
+            <input type="text" id="tbr" value="0">
+        </p>
+        <p> Нижний левый угол
+            <input type="range" id="rbl" min="0" max="100" value="0" oninput="fun1()">
+            <input type="text" id="tbl" value="0">
+        </p>
+    </div>
+    <script src='script.js'></script>
+</body>
+
+</html>
