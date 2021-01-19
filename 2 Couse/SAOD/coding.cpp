@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -51,9 +53,9 @@ void Down(int n, int j, int* L, int** C) {
 			C[i][t] = C[i + 1][t];
 		L[i] = L[i + 1];
 	}
-	for (int i = 1; i <= n; i++) 
+	for (int i = 1; i <= n; i++)
 		C[n - 1][i] = S[i];
-	for (int i = 1; i <= n; i++) 
+	for (int i = 1; i <= n; i++)
 		C[n][i] = S[i];
 	C[n - 1][l + 1] = 0;
 	C[n][l + 1] = 1;
@@ -80,7 +82,7 @@ void Huffman(float* P, int* L, int** C, int n) {
 int Med(int l, int r, float* P) {
 	double Sl = 0, Sr = P[r];
 	int m;
-	for (int i = l; i <= r - 1; i++) 
+	for (int i = l; i <= r - 1; i++)
 		Sl += P[i];
 	m = r;
 	while (Sl >= Sr) {
@@ -122,7 +124,7 @@ void Gilbert_Mur(float* P, float* Q, int* L, int** C, int n) {
 		for (int j = 1; j <= L[i]; j++) {
 			Q[i] *= 2;
 			C[i][j] = Q[i];
-			if (Q[i] >= 1) 
+			if (Q[i] >= 1)
 				Q[i] -= 1;
 		}
 	}
@@ -135,32 +137,32 @@ int main() {
 	int L1[10];
 	float Lm = 0, H = 0;
 	float P[10] = { 0.21, 0.15, 0.15, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07 },
-	P1[11] = { 0,0.21, 0.15, 0.15, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07 },
-	P2[11] = { 0,0.21, 0.15, 0.15, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07 },
-	P3[11] = { 0,0.07, 0.15, 0.15, 0.07, 0.07, 0.21, 0.07, 0.07, 0.07, 0.07 },
-	Q[10],
-	Q1[11];
+		P1[11] = { 0,0.21, 0.15, 0.15, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07 },
+		P2[11] = { 0,0.21, 0.15, 0.15, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07 },
+		P3[11] = { 0,0.07, 0.15, 0.15, 0.07, 0.07, 0.21, 0.07, 0.07, 0.07, 0.07 },
+		Q[10],
+		Q1[11];
 
 	int** C = new int* [n];
 	for (int i = 0; i <= n; i++)
 		C[i] = new int[n];
 
 	int** C2 = new int* [n];
-	for (int i = 0; i <= n; i++) 
+	for (int i = 0; i <= n; i++)
 		C2[i] = new int[n];
 
 	int** C3 = new int* [n];
-	for (int i = 0; i <= n; i++) 
+	for (int i = 0; i <= n; i++)
 		C3[i] = new int[n];
 
 	cout << "Shennon: ";
 	Shenon(P, Q, L, C, n);
 	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < L[i]; j++) 
+		for (int j = 0; j < L[i]; j++)
 			cout << C[i][j] << " ";
 		cout << endl;
 	}
-	
+
 	for (int i = 0; i < n; i++) {
 		Lm += P[i] * L[i];
 		H -= P[i] * log2(P[i]);
@@ -176,7 +178,7 @@ int main() {
 	cout << "Huffman:" << endl;
 	Huffman(P1, L, C, n);
 	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= L[i]; j++) 
+		for (int j = 1; j <= L[i]; j++)
 			cout << C[i][j] << " ";
 		cout << endl;
 	}
@@ -189,9 +191,11 @@ int main() {
 
 	cout << endl << "Fano:" << endl;
 	int l = 1, r = n;
+
 	Fano(l, r, 0, C2, L, P2);
 	H = Lm = 0;
-	for (int i = 4; i <= r; i++) {
+	for (int i = 1; i <= r; i++) {
+		
 		for (int j = 1; j <= L[i]; j++)
 			cout << C2[i][j] << " ";
 		cout << endl;
@@ -201,14 +205,14 @@ int main() {
 		H -= P[i] * log2(P[i]);
 	}
 	cout << "Lm = " << Lm << " H = " << H << endl << endl;
-	for (int i = 0; i < n + 1; i++) 
+	for (int i = 0; i < n + 1; i++)
 		L[i] = 0;
 
 	cout << endl << "Gilbert_Mur" << endl;
 	Gilbert_Mur(P3, Q1, L, C3, n);
 	H = Lm = 0;
 	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= L[i]; j++) 
+		for (int j = 1; j <= L[i]; j++)
 			cout << C3[i][j] << " ";
 		cout << endl;
 	}
@@ -217,7 +221,5 @@ int main() {
 		H -= P3[i + 1] * log2(P3[i + 1]);
 	}
 	cout << "Lm = " << Lm << " H = " << H << endl << endl;
-	for (int i = 1; i < n + 1; i++) 
-		L[i] = 0;
 	system("pause");
 }
