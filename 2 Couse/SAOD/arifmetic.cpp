@@ -23,7 +23,7 @@ void tableSymbols(coding*& code, int& numsUnique) {
 	int totalNums = 0;
 	char ch;
 
-	std::fstream file("Input.txt", ios::in | ios::binary);
+	fstream file("Input.txt", ios::in | ios::binary);
 
 	while (!file.read((char*)&ch, sizeof(ch)).eof()) {
 		totalNums++;
