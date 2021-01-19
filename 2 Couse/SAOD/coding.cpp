@@ -62,10 +62,6 @@ void Down(int n, int j, int* L, int** C) {
 
 }
 
-void HL() {
-	cout << "0 0" << endl << "0 1 0" << endl << "0 1 1" << endl;
-}
-
 void Huffman(float* P, int* L, int** C, int n) {
 	if (n == 2) {
 		C[1][1] = 0;
@@ -192,7 +188,7 @@ int main() {
 		L[i] = 0;
 
 	cout << endl << "Fano:" << endl;
-	int l = 1, r = n; HL();
+	int l = 1, r = n;
 	Fano(l, r, 0, C2, L, P2);
 	H = Lm = 0;
 	for (int i = 4; i <= r; i++) {
