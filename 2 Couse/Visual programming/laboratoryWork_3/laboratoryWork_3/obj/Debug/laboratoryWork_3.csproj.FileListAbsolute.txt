@@ -42,3 +42,14 @@ A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laborator
 A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
 A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
 A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe.config
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.pdb
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csprojAssemblyReference.cache
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormColorSelection.resources
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormMain.resources
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.Properties.Resources.resources
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.GenerateResource.cache
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
+C:\Users\vladi\Desktop\Visual programming\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb

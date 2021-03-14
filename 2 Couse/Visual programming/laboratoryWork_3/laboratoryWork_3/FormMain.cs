@@ -60,8 +60,8 @@ namespace laboratoryWork_3
                 catch
                 {
                     MessageBox.Show(
-                        "Ошибка! \n Не удалось сохранить файл! \n Проверьте права на запись в дирректории для сохранения", 
-                        "Упс! Что-то пошло не так...", 
+                        "Ошибка!", 
+                        "Что-то пошло не так...", 
                         MessageBoxButtons.OK, 
                         MessageBoxIcon.Error);
                 }
@@ -102,8 +102,8 @@ namespace laboratoryWork_3
                 catch
                 {
                     MessageBox.Show(
-                        "Ошибка! \n Не удалось открыть файл! \n Возможно файл не является изображением!", 
-                        "Упс! Что-то пошло не так...", 
+                        "Ошибка!", 
+                        "Что-то пошло не так...", 
                         MessageBoxButtons.OK, 
                         MessageBoxIcon.Error);
                 }
@@ -232,8 +232,8 @@ namespace laboratoryWork_3
                 paintBox.Image = new Bitmap(history[currentRecordHistory]);
             }
             else MessageBox.Show(
-                "История пуста | Идти больше некуда",
-                "Вселенная схлопнулась (×﹏×) ", 
+                "Пусто",
+                "Нечего отменять", 
                 MessageBoxButtons.OK, 
                 MessageBoxIcon.Asterisk);
         }
@@ -245,8 +245,8 @@ namespace laboratoryWork_3
                 currentRecordHistory += 1;
             }
             else MessageBox.Show(
-               "Попытка заглянуть в будущее или давно забытое прошлое не удалась :с",
-               "Временной партуль. Астанавитес (‡▼益▼)", 
+               "Низя",
+               "да низя", 
                MessageBoxButtons.OK, 
                MessageBoxIcon.Asterisk);
 
@@ -277,6 +277,11 @@ namespace laboratoryWork_3
             get { return currentColor; }
         }
         private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
