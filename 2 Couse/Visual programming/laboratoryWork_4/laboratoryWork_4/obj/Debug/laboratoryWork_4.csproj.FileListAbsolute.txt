@@ -1,0 +1,20 @@
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csprojAssemblyReference.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.Properties.Resources.resources
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csproj.GenerateResource.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csproj.CoreCompileInputs.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.exe.config
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.exe
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.pdb
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.exe
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.pdb
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.FormMain.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.exe.config
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.exe
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\bin\Debug\laboratoryWork_4.pdb
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csprojAssemblyReference.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.FormMain.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.Properties.Resources.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csproj.GenerateResource.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.csproj.CoreCompileInputs.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.exe
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_4\laboratoryWork_4\obj\Debug\laboratoryWork_4.pdb

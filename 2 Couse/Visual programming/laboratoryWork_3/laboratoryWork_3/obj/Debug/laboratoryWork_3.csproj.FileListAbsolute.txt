@@ -1,0 +1,44 @@
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe.config
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.pdb
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csprojAssemblyReference.cache
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.Properties.Resources.resources
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.GenerateResource.cache
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormMain.resources
+C:\Users\kchipson\Desktop\laboratoryWork_3\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormColorSelection.resources
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe.config
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.pdb
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csprojAssemblyReference.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormColorSelection.resources
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormMain.resources
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.Properties.Resources.resources
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.GenerateResource.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
+D:\STUDY\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe.config
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.pdb
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csprojAssemblyReference.cache
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormColorSelection.resources
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormMain.resources
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.Properties.Resources.resources
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.GenerateResource.cache
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
+C:\Users\Александр\Documents\Учеба\Хелпка 4 семестр\VirtualProgramming\Лабораторные работы\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe.config
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.exe
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\bin\Debug\laboratoryWork_3.pdb
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csprojAssemblyReference.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormColorSelection.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.FormMain.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.Properties.Resources.resources
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.GenerateResource.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.csproj.CoreCompileInputs.cache
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.exe
+A:\Загрузки\c757c03caad46d0c\визуалка\laboratoryWork_3\laboratoryWork_3\obj\Debug\laboratoryWork_3.pdb
