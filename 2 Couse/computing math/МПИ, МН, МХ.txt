@@ -1,0 +1,103 @@
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include <vector>
+
+using namespace std;
+
+const int e = pow(10, -8);
+
+// x^2 - 2x - 3
+// D = 4 - 12 = 16
+// x1 = 3; x2 = -1
+
+void MPD(float inta, float intb, int b, int c, float interval) {
+  cout << "\n\nМетод половинного деления: \n\n";
+  int i = 1; float eps = 1, C, f_a, f_b, f_c;
+  while (abs(eps) > e && i != 22) {
+    C = (inta + intb) / 2;
+    eps = abs(inta - intb) / 2;
+    f_a = inta * inta + inta * b + c; 
+    f_b = intb * intb + intb * b + c;
+    f_c = C * C + C * b + c;
+    float Fac = f_a * f_c;
+    float Fcb = f_b * f_c;
+    interval = min(Fac, Fcb);
+    cout << "Шаг " << i << " " << interval << " \n";
+    i += 1;
+    if(Fac > Fcb) {
+      inta = C;
+      cout << "[" << inta << ";" << intb << "]" << "\n";
+    }
+    else {
+      intb = C;
+      cout << "[" << inta << ";" << intb << "]" << "\n";
+    }
+    cout << "Toчность " << eps << "\n";
+  }
+}
+
+void MN(float intb, int b, int c) {
+  cout << "\n\nМетод Ньютона: \n\n";
+  int i = 0; long double eps = 1, f_x, F_x, xk;
+  vector <long double> a;
+  while(abs(eps) > e) {
+    f_x = intb * intb + intb * b + c;
+    F_x = 2 * intb + b;
+    xk = intb - f_x / F_x;
+    cout << "Шаг " << i + 1 << " " << xk << "\n";
+    a.push_back(xk);
+    i += 1;
+    intb = xk;
+    if(i > 1)
+      eps = -a[i - 1] + a[i - 2];
+  }
+  cout << "Toчность: " << eps << "\n";
+}
+
+void MH(float inta, float intb, int b, int c) {
+  cout << "\n\nМетод Хорд: \n\n";
+  int i = 0; long double eps = 1, f_b, f_a, f_C, C, F1, F2;
+  vector <long double> a;
+  while(abs(eps) > e) {
+    f_b = intb * intb + intb * b + c;
+    f_a = inta * inta + inta * b + c;
+    C = (inta * f_b - intb * f_a)/(f_b - f_a);
+    cout << "Шаг " << i + 1 << " " << C << "\n";
+    a.push_back(C);
+    f_C = C * C + C * b + c;
+    F1 = f_a * f_C;
+    F2 = f_b + f_C;
+    if(F1 > F2)
+      inta = C;
+    else
+      intb = C;
+    if(i > 1)
+      eps = a[i] - a[i - 1];
+    i += 1; 
+  }
+  cout << "Toчность: " << eps << "\n";
+}
+
+
+int main() {
+  int x, a, b, c; long double D, x1, x2, interval, inta, intb;
+  cout << "Введите коэф перед x^2,\n " << "Введите коэф перед x:,\n " << "Введите число: \n";
+  cin >> x >> b >> c;
+  a = x * x;
+  D = b * b - 4 * a * c;
+  x1 = (-b + sqrt(D)) / 2 * x;
+  x2 = (-b - sqrt(D)) / 2 * x;
+  interval = max(x1, x2);
+  intb = ceil(interval);
+  inta = floor(interval);
+  cout << "Дискриминант = " << D << "\n";
+  cout << "x1 = " << x1 << "\n";
+  cout << "x2 = " << x2 << "\n";
+  cout << "Интервал [ " << inta << "; " << intb << " ]\n"; 
+  MPD(inta, intb, b, c, interval);
+  MN(intb, b, c);
+  MH(inta, intb, b, c);
+
+  return 0;
+}
