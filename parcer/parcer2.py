@@ -34,5 +34,5 @@ if __name__ == '__main__':
         dictname = Parcer(url)
         for i in dictname:
             print(i,
-                  int(dictname.get(i)[0].text.replace(" ", "")) + 12, "Рублей")
+                  int(dictname.get(i)[0].text.replace(" ", "")), "Рублей")
     print(url)
