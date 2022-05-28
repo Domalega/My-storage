@@ -6,23 +6,26 @@
 #include <cstring>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <unistd.h>
 #include <signal.h>
 #include <iostream>
-#include <sys/types.h>
-#include <sys/time.h>
-#include <sys/resource.h>
-#include <sys/wait.h>
-#include <ctime>
+#include <algorithm>
+#include <string>
 
 #define BUFLEN 255
 
 using namespace std;
 
+
+//CodeWords - ключивые слова карт, используется для вывода
+//masOfCards - хранит количество использованных карт (что бы не было привышение 4 штук) 	
+string CodeWords[15] = {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"};
+int ValueOfWords[15] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4};
+
+	
 void Help(){
 	cout << "Two cards are dealt to the table, visible to both players.\n\
 After that, everyone in turn can either draw one more card, or stop drawing cards.\n\
-The game will stop when both players say stop.\n\n";
+The game will stop when both players say stop or both of them take cards on more then 21 points.\n\n";
 }
 
 void ClientStart(){
@@ -55,10 +58,9 @@ void ClientStart(){
 	bind(sockClient, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
 	connect(sockClient, (struct sockaddr *)&servAddr, sizeof(servAddr));
 	
-	char TempBuf[255];
+	char TempBuf[BUFLEN];
 	string CardsOnTable[2];
-	string CodeWords[15] = {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"};
-	int ValueOfWords[15] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4};
+
 	int SumClinet = 0, temp;
 	for(;;){
 		bzero(buf, BUFLEN);		
@@ -75,25 +77,37 @@ void ClientStart(){
 									
 		string choice;
 		Repeat:
-			cout << "Take card or Stop?\n";
-			cin >> choice;
-			if(choice == "Stop"){
-				cout << "Client : " + choice + "\n";
+			if(SumClinet < 21){
+				cout << "Take card or Stop?\n";
+				cin >> choice;
+				// to lowercase commands
+				transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
+				if(choice == "stop"){
+					cout << "Client : " + choice + "\n";
+					strcpy(buf, choice.c_str());
+					send(sockClient, buf, BUFLEN, 0);
+			
+					break;
+				}
+				
+				if(choice == "take"){
+					temp = 6 + rand() % (14 - 6);
+					cout << "You Take" << "\n" << CodeWords[temp] << "\n";
+					SumClinet += ValueOfWords[temp];
+					cout << "Yours count" << "\n" << SumClinet << "\n";
+					strcpy(buf, choice.c_str());
+					
+					goto Repeat;
+				}
+			}
+			
+			else{
+				cout << "You can`t take another card!\n";
+				choice = "stop";
 				strcpy(buf, choice.c_str());
 				send(sockClient, buf, BUFLEN, 0);
-			
-				break;
-			}
-				
-			if(choice == "Take"){
-				temp = 1 + rand() % 14;
-			
-				cout << "You Take" << "\n" << CodeWords[temp] << "\n";
-				SumClinet += ValueOfWords[temp];
-				cout << "Yours count" << "\n" << SumClinet << "\n";
-				strcpy(buf, choice.c_str());
-			
-				goto Repeat;
+
+				break;			
 			}
 
 	}
@@ -129,21 +143,10 @@ void ServerStart(){
 	getsockname(sockClient, (struct sockaddr *)&clientAddr, &addr_len);
 	listen(sockServer, 1);
 	
-	printf("Server: № port - %d\n", ntohs(servAddr.sin_port));	
+	printf("Server: № port - %d\n", ntohs(servAddr.sin_port));		
 	printf("Server: № Addr - %s\n\n", inet_ntoa(servAddr.sin_addr));
 	
-	int firstSum = 0, secondSum = 0;
-	string command = " ";
-	
-	//CodeWords - ключивые слова карт, используется для вывода
-	//masOfCards - хранит количество использованных карт (что бы не было привышение 4 штук) 
-	//cardsOnTable - карты имеющиеся на столе 	
-	string CodeWords[15] = {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"};
-	int ValueOfWords[15] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4};
 	int masOfCards[15], cardsOnTable[15];
-	for(int i = 0; i <= 15; i++)
-		masOfCards[i] = 0;
-	
 	
 	int temp, count = 0;
 	char bufTempOut[BUFLEN] = {};
@@ -151,7 +154,7 @@ void ServerStart(){
 	bzero(bufTempOut, BUFLEN);
 
 	for(int i = 0; i < 2; i++){
-		temp = 1 + rand() % 14;
+		temp = 6 + rand() % (14 - 6);
 		cardsOnTable[i] = temp;
 		masOfCards[temp] += 1;
 		count++;
@@ -165,7 +168,7 @@ void ServerStart(){
 
 
 	bool flagStartGame = true;
-	while(1){
+	for(;;){
 		sockClient = accept(sockServer, 0, 0);	
 		pid = fork();
 		if(pid == 0){
@@ -181,30 +184,81 @@ void ServerStart(){
 				string choice; 
 				int SumServer = ValueOfWords[cardsOnTable[0]] + ValueOfWords[cardsOnTable[1]];
 				int a = recv(sockClient, buf, BUFLEN, 0);
-				if(strcmp(buf, "Stop") == 0){
+				if(strcmp(buf, "stop") == 0){
 					Repeat:
-						cout << "Take card or Stop?\n";
-						cin >> choice;
-						if(choice == "Stop"){
-							cout << "Server : " + choice + "\n";
+						if(SumServer < 21){
+							cout << "Take card or Stop?\n";
+							cin >> choice;
+							// to lowercase commands
+							transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
+							if(choice == "stop"){
+								cout << "Server : " + choice + "\n";
+								recv(sockClient, buf, BUFLEN, 0);
+								string Out = "Server sum: " + to_string(SumServer) + " Client sum: " + string(buf) + "\n";
+								
+								if(SumServer <= 21 && atoi(string(buf).c_str()) <= 21){
+									if(SumServer > atoi(string(buf).c_str()))
+										Out += "Server win!\n";
+									if(SumServer < atoi(string(buf).c_str()))
+										Out += "Client win!\n";
+									if(SumServer == atoi(string(buf).c_str()))
+										Out += "Draw!\n";
+								}
+								
+								else{
+									if(SumServer >= 21 && atoi(string(buf).c_str()) >= 21)
+										Out += "mutual defeat!\n";
+									if(SumServer <= 21 && atoi(string(buf).c_str()) >= 21)
+										Out += "Server win!\n";
+									if(SumServer >= 21 && atoi(string(buf).c_str()) <= 21)
+										Out += "Client win!\n";															
+							
+								}
+								
+								cout << Out;
+								bzero(buf, BUFLEN);
+								copy(Out.begin(), Out.end(), buf);
+								send(sockClient, buf, BUFLEN, 0);
+								break;					
+							}
+					
+					
+							if(choice == "take"){
+								temp = 6 + rand() % (14 - 6);		
+								cout << "You Take" << "\n" << CodeWords[temp] << "\n";
+								SumServer += ValueOfWords[temp];
+								cout << "Yours count" << "\n" << SumServer << "\n";
+								goto Repeat;
+							}
+						}
+						
+						else{
+							cout << "You can`t take another card!\n";
 							recv(sockClient, buf, BUFLEN, 0);
 							string Out = "Server sum: " + to_string(SumServer) + " Client sum: " + string(buf) + "\n";
+
+						if(SumServer <= 21 && atoi(string(buf).c_str()) <= 21){
+							if(SumServer > atoi(string(buf).c_str()))
+								Out += "Server win!\n";
+							if(SumServer < atoi(string(buf).c_str()))
+								Out += "Client win!\n";
+							if(SumServer == atoi(string(buf).c_str()))
+								Out += "Draw!\n";
+						}
+						else{
+							if(SumServer >= 21 && atoi(string(buf).c_str()) >= 21)
+								Out += "mutual defeat!\n";
+							if(SumServer <= 21 && atoi(string(buf).c_str()) >= 21)
+								Out += "Server win!\n";
+							if(SumServer >= 21 && atoi(string(buf).c_str()) <= 21)
+								Out += "Client win!\n";															
+							
+						}
+								
 							cout << Out;
 							bzero(buf, BUFLEN);
 							copy(Out.begin(), Out.end(), buf);
-							send(sockClient, buf, BUFLEN, 0);
-							break;
-						
-						}
-					
-					
-						if(choice == "Take"){
-							temp = 1 + rand() % 14;
-			
-							cout << "You Take" << "\n" << CodeWords[temp] << "\n";
-							SumServer += ValueOfWords[temp];
-							cout << "Yours count" << "\n" << SumServer << "\n";
-							goto Repeat;
+							send(sockClient, buf, BUFLEN, 0);							
 						}
 				}
 
